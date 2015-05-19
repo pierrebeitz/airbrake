@@ -5,7 +5,7 @@ class AirbrakeGenerator < Rails::Generator::Base
   def add_options!(opt)
     opt.on('-k', '--api-key=key', String, "Your Airbrake API key")                                               { |v| options[:api_key] = v}
     opt.on('-h', '--heroku',              "Use the Heroku addon to provide your Airbrake API key")               { |v| options[:heroku]  = v}
-    opt.on('-a', '--app=myapp', String,   "Your Heroku app name (only required if deploying to >1 Heroku app)") { |v| options[:app]     = v}
+    opt.on('-a', '--app=myapp', String,   "Your Heroku app name (only required if deploying to >1 Heroku app)")  { |v| options[:app]     = v}
   end
 
   def manifest
@@ -39,7 +39,7 @@ class AirbrakeGenerator < Rails::Generator::Base
   end
 
   def api_key_expression
-    s = if options[:api_key]
+    if options[:api_key]
       "'#{options[:api_key]}'"
     elsif options[:heroku]
       "ENV['HOPTOAD_API_KEY']"
