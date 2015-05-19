@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("bourne",        "~> 1.4.0")
   s.add_development_dependency("cucumber-rails","~> 1.1.1")
   s.add_development_dependency("fakeweb",       "~> 1.3.0")
-  s.add_development_dependency("nokogiri",      "~> 1.5.0")
+  s.add_development_dependency("nokogiri",      "~> 1.6.0")
   s.add_development_dependency("rspec",         "~> 2.6.0")
   s.add_development_dependency("sham_rack",     "~> 1.3.0")
   s.add_development_dependency("json-schema",   "~> 1.0.12")
@@ -31,9 +31,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency("shoulda-context")
   s.add_development_dependency("pry")
   s.add_development_dependency("coveralls")
-  s.add_development_dependency("minitest", ["~> 4.0"])
+  s.add_development_dependency("minitest")
   s.add_development_dependency("test-unit")
-  
+
 
   s.authors = ["Airbrake"]
   s.email   = "support@airbrake.io"
