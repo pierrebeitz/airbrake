@@ -10,7 +10,7 @@ require './lib/airbrake/version'
 
 Coveralls::RakeTask.new
 
-appraisal_environments = %w(rails-4.0 rails-3.2 rails-3.1 rails-3.0 rake sinatra rack)
+appraisal_environments = %w(rails-4.2 rails-4.1 rails-4.0 rails-3.2 rails-3.1 rails-3.0 rake sinatra rack)
 task default: %w( test:unit coveralls:push) +
   appraisal_environments.map {|ae| "test:integration:#{ae.gsub(/[\-\.]/, '_')}"} +
   appraisal_environments.map {|ae| "test:cucumber:#{ae.gsub(/[\-\.]/, '_')}"}
@@ -154,7 +154,7 @@ task :clobber => [:clobber_rdoc, :clobber_package]
 LOCAL_GEM_ROOT = File.join(GEM_ROOT, 'tmp', 'local_gems').freeze
 
 # Helper method that's used to only include relevant features when using
-# various gemfiles. We don't want to, for instance, test sinatra features when 
+# various gemfiles. We don't want to, for instance, test sinatra features when
 # using the rails gemfile and vice versa.
 def cucumber_opts
   opts = "--tags ~@wip "
